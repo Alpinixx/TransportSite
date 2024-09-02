@@ -1,11 +1,8 @@
 import * as React from "react";
 import { Box, Flex, Text, useColorModeValue } from "@chakra-ui/react";
+import landing from "../assets/landing.png";
 
 const Dashboard = () => {
-  const bgColor = useColorModeValue(
-    "linear(to-r, purple.400, purple.700)",
-    "linear(to-r, purple.500, purple.900)"
-  );
   const textColor = useColorModeValue("white", "gray.200");
 
   return (
@@ -13,18 +10,22 @@ const Dashboard = () => {
       as="main"
       pt="80px"
       minH="calc(100vh - 80px)"
-      bgGradient={bgColor}
+      bgImage={landing}
+      bgRepeat="no-repeat"
+      bgSize={{ base: "auto 400px", md: "cover" }} // Adjusts the size of the background
+      bgPosition={{ base: "center center", md: "center" }} // Positions the background
       color={textColor}
       px={{ base: 4, md: 6 }}
       py={4}
+      borderRadius={14}
     >
       <Flex direction="column" justify="center" align="center" height="100%">
-        <Text fontSize={{ base: "2xl", md: "4xl" }} fontWeight="bold" mb={4}>
+        <Text
+          fontSize={{ base: "xl", md: "4xl" }} // Smaller font size on small screens
+          fontWeight="bold"
+          mt={24}
+        >
           Manage your transport
-        </Text>
-        <Text fontSize={{ base: "md", md: "lg" }} textAlign="center">
-          Welcome to your Solana-themed dashboard. Manage your transport options
-          efficiently.
         </Text>
       </Flex>
     </Box>

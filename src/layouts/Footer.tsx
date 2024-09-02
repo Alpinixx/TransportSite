@@ -10,10 +10,10 @@ const Footer = () => {
       as="footer"
       bg={bgColor}
       color={textColor}
-      py={4}
-      px={6}
+      py={8}
+      px={8}
       boxShadow="md"
-      borderTopWidth="1px"
+      borderTopWidth={1}
       borderColor={useColorModeValue("gray.200", "gray.700")}
     >
       <Flex
@@ -22,9 +22,13 @@ const Footer = () => {
         align="center"
       >
         <Text fontSize="sm" textAlign={{ base: "center", md: "left" }}>
-          © {new Date().getFullYear()} Your Company Name. All rights reserved.
+          © {new Date().getFullYear()} IndiTransport Taxi Booking. All rights
+          reserved.
         </Text>
-        <Flex mt={{ base: 3, md: 0 }}>
+        <Flex mt={{ base: 2, md: 0 }}>
+          <Link href="#" mx={2} _hover={{ textDecoration: "underline" }}>
+            Terms
+          </Link>
           <Link href="#" mx={2} _hover={{ textDecoration: "underline" }}>
             Privacy Policy
           </Link>
